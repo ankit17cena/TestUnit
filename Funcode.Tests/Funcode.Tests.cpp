@@ -9,7 +9,7 @@ namespace FuncodeTests
 	TEST_CLASS(FuncodeTests)
 	{
 	public:
-		
+
 		TEST_METHOD(isPerfectSquar)
 		{
 			Assert::IsTrue(isPerfectSquare(4));
@@ -18,39 +18,39 @@ namespace FuncodeTests
 			Assert::IsTrue(isPerfectSquare(25));
 			Assert::IsFalse(isPerfectSquare(30));
 			Assert::IsFalse(isPerfectSquare(123456789));
-			
+
 		}
 
 		TEST_METHOD(mergeSortedLists1) {
-			std::vector<int>v = mergeSortedLists({ 1, 3, 5, 7}, { 2, 4, 6, 8});
+			std::vector<int>v = mergeSortedLists({ 1, 3, 5, 7 }, { 2, 4, 6, 8 });
 			std::vector<int>exp = { 1, 2, 3, 4, 5, 6, 7, 8 };
 			Assert::AreEqual(exp.size(), v.size());
 			for (int j = 0; j < exp.size(); j++) {
 				Assert::AreEqual(exp[j], v[j]);
 			}
 
-			std::vector<int>v1 = mergeSortedLists({ 1, 2,3}, {4,5,6});
-			exp = {1, 2, 3, 4, 5, 6};
+			std::vector<int>v1 = mergeSortedLists({ 1, 2,3 }, { 4,5,6 });
+			exp = { 1, 2, 3, 4, 5, 6 };
 			Assert::AreEqual(exp.size(), v1.size());
 			for (int j = 0; j < exp.size(); j++) {
 				Assert::AreEqual(exp[j], v1[j]);
 			}
 
-			std::vector<int>v2 = mergeSortedLists({ 1,3,5,7}, {2,4,6});
+			std::vector<int>v2 = mergeSortedLists({ 1,3,5,7 }, { 2,4,6 });
 			exp = { 1, 2, 3, 4, 5, 6,7 };
 			Assert::AreEqual(exp.size(), v2.size());
 			for (int j = 0; j < exp.size(); j++) {
 				Assert::AreEqual(exp[j], v2[j]);
 			}
 
-			std::vector<int>v3 = mergeSortedLists({ }, {2,4,6,8 });
-			exp = {2,4,6,8};
+			std::vector<int>v3 = mergeSortedLists({ }, { 2,4,6,8 });
+			exp = { 2,4,6,8 };
 			Assert::AreEqual(exp.size(), v3.size());
 			for (int j = 0; j < exp.size(); j++) {
 				Assert::AreEqual(exp[j], v3[j]);
 			}
 		}
-		
+
 		TEST_METHOD(areBracketsBalance)
 		{
 			Assert::IsTrue(areBracketsBalanced(""));
@@ -64,25 +64,25 @@ namespace FuncodeTests
 		}
 
 		TEST_METHOD(removeLastDuplicate) {
-			std::vector<int>v = removeLastDuplicates({1,2,3,4});
-			std::vector<int>exp = {1,2,3,4};
+			std::vector<int>v = removeLastDuplicates({ 1,2,3,4 });
+			std::vector<int>exp = { 1,2,3,4 };
 			for (int i = 0; i < v.size(); i++) {
 				Assert::AreEqual(exp[i], v[i]);
 			}
-			v = removeLastDuplicates({ 1,2,2,3,3,3});
-			exp = { 1,2,3};
+			v = removeLastDuplicates({ 1,2,2,3,3,3 });
+			exp = { 1,2,3 };
 			for (int i = 0; i < v.size(); i++) {
 				Assert::AreEqual(exp[i], v[i]);
 			}
 
 			v = removeLastDuplicates({ 1,1,1 });
-			exp = {1};
+			exp = { 1 };
 			for (int i = 0; i < v.size(); i++) {
 				Assert::AreEqual(exp[i], v[i]);
 			}
 
-			v = removeLastDuplicates({ 1});
-			exp = { 1};
+			v = removeLastDuplicates({ 1 });
+			exp = { 1 };
 			for (int i = 0; i < v.size(); i++) {
 				Assert::AreEqual(exp[i], v[i]);
 			}
@@ -95,9 +95,9 @@ namespace FuncodeTests
 		}
 		TEST_METHOD(addString)
 		{
-			std::string a = addStrings("0","0");
+			std::string a = addStrings("0", "0");
 			std::string exp = "0";
-			Assert::AreEqual(exp,a);
+			Assert::AreEqual(exp, a);
 			std::string b = addStrings("0", "1234");
 			exp = "1234";
 			Assert::AreEqual(exp, b);
@@ -119,12 +119,12 @@ namespace FuncodeTests
 				Assert::AreEqual(exp[j], v[j]);
 			}
 			std::vector<int>v1 = squareSorted13({ -2, 0, 1, 3 });
-			 exp = { 0, 1, 4, 9 };
+			exp = { 0, 1, 4, 9 };
 			for (int j = 0; j < exp.size(); j++) {
 				Assert::AreEqual(exp[j], v1[j]);
 			}
 			std::vector<int>v2 = squareSorted13({ -9, -7, -3, -1, 2, 3, 7, 9 });
-			 exp = { 1, 4, 9, 9,49, 49, 81, 81 };
+			exp = { 1, 4, 9, 9,49, 49, 81, 81 };
 			for (int j = 0; j < exp.size(); j++) {
 				Assert::AreEqual(exp[j], v2[j]);
 			}
@@ -142,15 +142,15 @@ namespace FuncodeTests
 		TEST_METHOD(fourSum1)
 		{
 			std::vector<int>v = { 1, 2, 3, 4, 5 };
-			bool a = fourSum(v, 10 );
+			bool a = fourSum(v, 10);
 			Assert::IsTrue(a);
 			std::vector<int>v1 = { 2, 4, 6, 8 };
 			bool b = fourSum(v1, 20);
 			Assert::IsTrue(b);
-			std::vector<int>v2 = {1,2,3,4,5};
+			std::vector<int>v2 = { 1,2,3,4,5 };
 			bool c = fourSum(v2, 20);
 			Assert::IsFalse(c);
-			std::vector<int>v3 = {1,2,3};
+			std::vector<int>v3 = { 1,2,3 };
 			bool d = fourSum(v3, 10);
 			Assert::IsFalse(d);
 		}
@@ -160,30 +160,30 @@ namespace FuncodeTests
 			std::string exp = "world hello";
 			Assert::AreEqual(exp, a);
 			std::string b = reverseWords("the sky is blue");
-			  exp = "blue is sky the";
+			exp = "blue is sky the";
 			Assert::AreEqual(exp, b);
 			std::string c = reverseWords("");
-			  exp = "";
+			exp = "";
 			Assert::AreEqual(exp, c);
 		}
 
 		TEST_METHOD(toBase3a) {
 			std::string a = toBase3(1);
 			std::string exp = "1";
-			Assert::AreEqual(exp,a);
+			Assert::AreEqual(exp, a);
 			std::string b = toBase3(8);
-			  exp = "22";
+			exp = "22";
 			Assert::AreEqual(exp, b);
 			std::string c = toBase3(5);
-			  exp = "12";
+			exp = "12";
 			Assert::AreEqual(exp, c);
-			
+
 		}
 		TEST_METHOD(maxOperation) {
 			std::vector<int>v = { 1,2,3,4,5 };
-			Assert::AreEqual(2, maxOperations(v,6));
+			Assert::AreEqual(2, maxOperations(v, 6));
 
-			std::vector<int>v1 = {3,1,3,4,3};
+			std::vector<int>v1 = { 3,1,3,4,3 };
 			Assert::AreEqual(1, maxOperations(v1, 6));
 
 			std::vector<int>v2 = { 1,1,1,1,1 };
@@ -205,15 +205,15 @@ namespace FuncodeTests
 				Assert::AreEqual(exp[j], v1[j]);
 			}
 
-			std::vector<int>v2 = mergeSortedArrays1({ 1}, { 2});
-			exp = { 1, 2};
+			std::vector<int>v2 = mergeSortedArrays1({ 1 }, { 2 });
+			exp = { 1, 2 };
 			Assert::AreEqual(exp.size(), v2.size());
 			for (int j = 0; j < exp.size(); j++) {
 				Assert::AreEqual(exp[j], v2[j]);
 			}
 
-			std::vector<int>v3 = mergeSortedArrays1({3,4,5}, {1,2 });
-			exp = {1,2,3,4,5};
+			std::vector<int>v3 = mergeSortedArrays1({ 3,4,5 }, { 1,2 });
+			exp = { 1,2,3,4,5 };
 			Assert::AreEqual(exp.size(), v3.size());
 			for (int j = 0; j < exp.size(); j++) {
 				Assert::AreEqual(exp[j], v3[j]);
@@ -259,8 +259,8 @@ namespace FuncodeTests
 				Assert::AreEqual(exp[i], v[i]);
 			}
 
-			 v = primeFactors(10);
-			exp = { 2 ,5};
+			v = primeFactors(10);
+			exp = { 2 ,5 };
 			for (int i = 0; i < exp.size(); i++) {
 				Assert::AreEqual(exp[i], v[i]);
 			}
@@ -271,13 +271,13 @@ namespace FuncodeTests
 				Assert::AreEqual(exp[i], v[i]);
 			}
 
-			 v = primeFactors(27);
+			v = primeFactors(27);
 			exp = { 3,3,3 };
 			for (int i = 0; i < exp.size(); i++) {
 				Assert::AreEqual(exp[i], v[i]);
 			}
 
-			
+
 		}
 
 		TEST_METHOD(addStringa)
@@ -325,14 +325,14 @@ namespace FuncodeTests
 		TEST_METHOD(largestCommonDivisors) {
 			int a = largestCommonDivisor({ 10, 20, 30, 40, 50 });
 			Assert::AreEqual(10, a);
-			int b = largestCommonDivisor({ 13,26,39,52,65});
+			int b = largestCommonDivisor({ 13,26,39,52,65 });
 			Assert::AreEqual(13, b);
 			int c = largestCommonDivisor({ 25, 125, 250, 375, 500 });
 			Assert::AreEqual(25, c);
 		}
 
 		TEST_METHOD(sumOfLeftLeave) {
-			
+
 			std::shared_ptr<TreeNode> root1 = std::make_shared<TreeNode>(1);
 			root1->left = std::make_shared<TreeNode>(2);
 			root1->right = std::make_shared<TreeNode>(3);
@@ -373,15 +373,15 @@ namespace FuncodeTests
 			Assert::AreEqual(13, binaryListToInt(head2));
 		}
 		TEST_METHOD(maxUniqueSublistSum12) {
-			 
+
 			Assert::AreEqual(11, maxUniqueSublistSum1({ 5, 2, 1, 3, 2, 4, 1 }));
 			Assert::AreEqual(15, maxUniqueSublistSum1({ 5, 4, 3, 2, 1 }));
-			Assert::AreEqual(15, maxUniqueSublistSum1({1,2,3,4,5}));
-			Assert::AreEqual(6, maxUniqueSublistSum1({ 1,2,3,2,1}));
-			Assert::AreEqual(1, maxUniqueSublistSum1({ 1,1,1,1,1}));
+			Assert::AreEqual(15, maxUniqueSublistSum1({ 1,2,3,4,5 }));
+			Assert::AreEqual(6, maxUniqueSublistSum1({ 1,2,3,2,1 }));
+			Assert::AreEqual(1, maxUniqueSublistSum1({ 1,1,1,1,1 }));
 			Assert::AreEqual(0, maxUniqueSublistSum1({ }));
 			Assert::AreEqual(0, maxUniqueSublistSum1({ 0 }));
-			 
+
 		}
 
 		TEST_METHOD(relativeRanking1) {
@@ -399,7 +399,7 @@ namespace FuncodeTests
 
 
 			v = ranking({ 10, 10, 9, 8, 8 });
-			exp = { 0, 0, 1, 2, 2};
+			exp = { 0, 0, 1, 2, 2 };
 			for (int i = 0; i < v.size(); i++) {
 				Assert::AreEqual(exp[i], v[i]);
 			}
@@ -424,7 +424,7 @@ namespace FuncodeTests
 			Assert::IsFalse(isPerfectSquare2(123456789));
 
 		}
-		 
+
 
 		TEST_METHOD(isPerfectSquart22)
 		{
@@ -464,10 +464,10 @@ namespace FuncodeTests
 			head2->next->next->next->next = std::make_shared<ListNode>(5);
 			head2->next->next->next->next->next = std::make_shared<ListNode>(6);
 			Assert::AreEqual(4, findMiddleNode(head2));
-			 
+
 			std::shared_ptr<ListNode> head3 = std::make_shared<ListNode>(1);
 			Assert::AreEqual(1, findMiddleNode(head3));
-			
+
 		}
 		TEST_METHOD(sumTree1) {
 			std::shared_ptr<TreeNode> root = std::make_shared<TreeNode>(10);
@@ -541,10 +541,10 @@ namespace FuncodeTests
 
 		TEST_METHOD(maxSumSublist1) {
 			Assert::AreEqual(10, maxSumSublist({ 1,2,3,2,5 }));
-			Assert::AreEqual(1, maxSumSublist({ 1,1,1,1,1}));
+			Assert::AreEqual(1, maxSumSublist({ 1,1,1,1,1 }));
 			Assert::AreEqual(15, maxSumSublist({ 1,2,3,4,5 }));
 			Assert::AreEqual(0, maxSumSublist({ 0 }));
-			Assert::AreEqual(2, maxSumSublist({2,2,2,2,2 }));
+			Assert::AreEqual(2, maxSumSublist({ 2,2,2,2,2 }));
 			Assert::AreEqual(15, maxSumSublist({ 1,2,3,4,5,1,2,3,4,5 }));
 		}
 		TEST_METHOD(maxPathSum1) {
@@ -569,7 +569,7 @@ namespace FuncodeTests
 			int b = binaryToDecimal1(head1);
 			Assert::AreEqual(5, b);
 
-			std::shared_ptr<ListNode> head2 = std::make_shared<ListNode>(1);  
+			std::shared_ptr<ListNode> head2 = std::make_shared<ListNode>(1);
 			head2->next = std::make_shared<ListNode>(1);
 			head2->next->next = std::make_shared<ListNode>(1);
 			head2->next->next->next = nullptr;
@@ -598,17 +598,17 @@ namespace FuncodeTests
 			std::vector<int>v = merge({ 1, 3, 5, 7, 9 }, { 2, 4, 6, 8, 10 });
 			std::vector<int>exp = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 			Assert::AreEqual(exp.size(), v.size());
-				for (int j = 0; j < exp.size(); j++) {
-					Assert::AreEqual(exp[j], v[j]);
-				}
+			for (int j = 0; j < exp.size(); j++) {
+				Assert::AreEqual(exp[j], v[j]);
+			}
 
 
-				std::vector<int>v1 = merge({ 1, 3, 5, 7, 9 }, { 0, 2, 4, 6, 8 });
-				exp = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-				Assert::AreEqual(exp.size(), v1.size());
-				for (int j = 0; j < exp.size(); j++) {
-					Assert::AreEqual(exp[j], v1[j]);
-				}
+			std::vector<int>v1 = merge({ 1, 3, 5, 7, 9 }, { 0, 2, 4, 6, 8 });
+			exp = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+			Assert::AreEqual(exp.size(), v1.size());
+			for (int j = 0; j < exp.size(); j++) {
+				Assert::AreEqual(exp[j], v1[j]);
+			}
 		}
 
 		TEST_METHOD(binaryToDecimal11) {
@@ -633,7 +633,7 @@ namespace FuncodeTests
 			Assert::AreEqual(exp, a);
 
 			a = deleteConsecutiveDuplicates("abcdefg");
-		    exp = "abcdefg";
+			exp = "abcdefg";
 			Assert::AreEqual(exp, a);
 
 			a = deleteConsecutiveDuplicates("aab");
@@ -660,8 +660,8 @@ namespace FuncodeTests
 		TEST_METHOD(evaluate1) {
 			std::string a = evaluate("true ? true : false");
 			std::string exp = "true";
-			Assert::AreEqual(exp,a);
-			a=evaluate("true ? true ? false : true : true");
+			Assert::AreEqual(exp, a);
+			a = evaluate("true ? true ? false : true : true");
 			exp = "false";
 			Assert::AreEqual(exp, a);
 		}
@@ -752,6 +752,6 @@ namespace FuncodeTests
 			exp = "false";
 			Assert::AreEqual(exp, a);
 		}
-		 
+
 	};
 }

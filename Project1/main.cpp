@@ -1,19 +1,20 @@
 #include <iostream>
 #include <vector>
+#include <memory>
+#include <limits>
 #include <unordered_map>
 #include <unordered_set>
 #include <string>
 #include <queue>
 #include <numeric>
-#include <algorithm>
 #include <stack>
 
-int gcd(int a, int b) {
+int gcd1(int a, int b) {
     if (b == 0) {
         return a;
     }
     else {
-        return gcd(b, a % b);
+        return gcd1(b, a % b);
     }
 }
 
@@ -377,7 +378,7 @@ struct TreeNode {
 };
 
 bool checkLeavesAtSameLevel(const std::shared_ptr<TreeNode>& root) {
-    if (!root) 
+    if (!root)
         return true;
     std::queue<std::shared_ptr<TreeNode>> q;
     q.push(root);
@@ -409,7 +410,7 @@ bool checkLeavesAtSameLevel(const std::shared_ptr<TreeNode>& root) {
 
     return true;
 }
- 
+
 std::string addStrings4(std::string a, std::string b) {
     int i = (int)a.length() - 1, j = (int)b.length() - 1, carry = 0;
     std::string result = "";
@@ -434,7 +435,7 @@ std::string addStrings4(std::string a, std::string b) {
 
 
 
- 
+
 int  sumTree(const std::shared_ptr<TreeNode>& root) {
     if (!root)
         return 0;
@@ -486,22 +487,22 @@ bool isPerfectSquare1(int n) {
 
     return false;
 }
- 
 
-int maxPathSum11(const std::shared_ptr<TreeNode>& root,int &ans) {
+
+int maxPathSum11(const std::shared_ptr<TreeNode>& root, int& ans) {
     if (!root) return 0;
-    int l = std::max(0, maxPathSum11(root->left,ans));
-    int r = std::max(0, maxPathSum11(root->right,ans));
+    int l = std::max(0, maxPathSum11(root->left, ans));
+    int r = std::max(0, maxPathSum11(root->right, ans));
     ans = std::max(ans, l + r + root->val);
     return std::max(l, r) + root->val;
 }
 int maxPathSum(const std::shared_ptr<TreeNode>& root) {
-    int ans= std::numeric_limits<int>::min();
+    int ans = std::numeric_limits<int>::min();
     if (!root) return 0;
-    maxPathSum11(root,ans);
+    maxPathSum11(root, ans);
     return ans;
 }
- 
+
 
 struct ListNode {
     int val;
@@ -552,7 +553,7 @@ std::vector<int> merge(std::vector<int> v1, std::vector<int> v2) {
     return result;
 }
 
- 
+
 
 
 bool isPalindrome(const std::shared_ptr<ListNode>& head) {
@@ -616,16 +617,16 @@ std::vector<int> primeFactors(int n) {
 int largestCommonDivisor(const std::vector<int>& nums) {
     //std::assert(nums.size() > 0);
     if (nums.size() == 1) return nums[0];
-    int ans = gcd(nums[0], nums[1]);
+    int ans = gcd1(nums[0], nums[1]);
     for (size_t i = 2; i < nums.size(); i++) {
-        ans = gcd(ans, nums[i]);
+        ans = gcd1(ans, nums[i]);
     }
     return ans;
 }
 
 
 
-int sumOf(const std::shared_ptr<TreeNode>& root,int &ans1)
+int sumOf(const std::shared_ptr<TreeNode>& root, int& ans1)
 {
     if (root == NULL)
         return ans1;
@@ -633,8 +634,8 @@ int sumOf(const std::shared_ptr<TreeNode>& root,int &ans1)
     if (root->left != NULL && root->left->left == NULL && root->left->right == NULL)
         ans1 += root->left->val;
 
-    sumOf(root->left,ans1);
-    sumOf(root->right,ans1);
+    sumOf(root->left, ans1);
+    sumOf(root->right, ans1);
     return ans1;
 }
 
@@ -643,9 +644,9 @@ int sumOfLeftLeaves(const std::shared_ptr<TreeNode>& root) {
     return sumOf(root, ans1);
 }
 
- 
+
 bool only235PrimeFactors1(int n) {
-    if (n == 1||n==0) return false;
+    if (n == 1 || n == 0) return false;
     int x = n;
     while (1) {
         if (n % 2 == 0) n /= 2;
@@ -797,7 +798,7 @@ std::string evaluate11(std::string s) {
 int largestCommonDivisor11(const std::vector<int>& nums) {
     int result = nums[0];
     for (int i = 1; i < nums.size(); i++) {
-        result = gcd(result, nums[i]);
+        result = gcd1(result, nums[i]);
     }
     return result;
 }
@@ -827,7 +828,7 @@ int findMiddleNode(const std::shared_ptr<ListNode>& head) {
     return l->val;
 }
 
- 
+
 
 bool isPerfectSquare4(int n) {
     int sum = 0;
@@ -896,7 +897,7 @@ int maxSumSublist(const std::vector<int>& nums) {
     return max_sum;
 }
 
- 
+
 
 int getDecimalValue(const std::shared_ptr<ListNode>& head) {
     int result = 0;
