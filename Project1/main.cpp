@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #include <vector>
 #include <memory>
 #include <limits>
@@ -126,7 +127,7 @@ std::string addStrings(std::string a, std::string b) {
     }
 
     int carry = 0;
-    std::string result = "";
+    std::string result {};
     for (int i = 0; i < n; i++) {
         int digit_a = a[n - i - 1] - '0';
         int digit_b = i < m ? b[m - i - 1] - '0' : 0;
@@ -144,7 +145,7 @@ std::string addStrings(std::string a, std::string b) {
     return result;
 }
 
-std::string evaluate(std::string s) {
+std::string evaluate(const std::string& s) {
     std::vector<std::string> conditions, expressions;
     int i = 0;
 
